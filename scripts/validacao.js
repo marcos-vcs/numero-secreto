@@ -15,12 +15,12 @@ function verificaSeOChutePossuiValorValido(chute){
     }
 
     if(numero === numeroSecreto){
+        initConfetti();
         document.body.innerHTML = `
             <h2>Você acertou!</h2>
             <h3>O número secreto era ${numeroSecreto}</h3>
             <button id="jogar-novamente" class="btn-jogar">Jogar novamente</button>
         `;
-        initConfetti();
     }else if(numero > numeroSecreto){
         elementoChute.innerHTML += `
         <div>O número secreto é menor <i class="fa-solid fa-arrow-down"></i></div>
@@ -44,6 +44,5 @@ function numeroForMaiorOuMenorQueOValorPermitido(numero){
 document.addEventListener('click', e => {
     if(e.target.id == 'jogar-novamente'){
         window.location.reload();
-        confetti = [];
     }
 })
