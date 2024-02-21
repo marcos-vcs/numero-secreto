@@ -4,8 +4,13 @@ window.SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecogn
 const recognition = new SpeechRecognition();
 recognition.lang = 'pt-br';
 recognition.start();
-
 recognition.addEventListener('result', onSpeak)
+
+const palavrasDeReset = [
+  'reiniciar',
+  'novo jogo',
+  'jogar novamente'
+]
 
 function onSpeak(event){
   const chute = event.results[0][0].transcript;
@@ -15,8 +20,19 @@ function onSpeak(event){
 }
 
 function reiniciarPorVoz(transcrito){
-  if(transcrito.toLowerCase() !== 'reiniciar' && 
-     transcrito.toLowerCase() !== 'novo jogo'){
+
+  let contador = 0;
+  palavrasDeReset.forEach(p => {
+    if(p === transcrito){
+      contador++;
+    }
+  })
+
+  if(contador !== 0){
+    return;
+  }
+
+  if(palavrasDeReset){
     return;
   }
   window.location.reload();
