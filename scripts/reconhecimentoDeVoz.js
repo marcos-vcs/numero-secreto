@@ -28,13 +28,10 @@ function reiniciarPorVoz(transcrito){
     }
   })
 
-  if(contador !== 0){
+  if(contador === 0){
     return;
   }
 
-  if(palavrasDeReset){
-    return;
-  }
   window.location.reload();
 }
 
