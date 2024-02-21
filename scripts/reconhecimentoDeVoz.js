@@ -15,12 +15,12 @@ function onSpeak(event){
 }
 
 function reiniciarPorVoz(transcrito){
-  if(transcrito.toLowerCase() != 'reiniciar' || transcrito.toLowerCase() != 'novo jogo'){
+  console.log(transcrito);
+  if(transcrito.toString().toLowerCase() != 'reiniciar' || 
+     transcrito.toString().toLowerCase() != 'novo jogo'){
     return;
   }
-
   window.location.reload();
-
 }
 
 function exibeChuteNaTela(chute){
