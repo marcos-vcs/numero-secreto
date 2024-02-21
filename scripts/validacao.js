@@ -15,8 +15,8 @@ function verificaSeOChutePossuiValorValido(chute){
     }
 
     if(numero === numeroSecreto){
-        document.body.innerHTML = `
-            <canvas class="confetti" id="canvas"></canvas>
+        const jogo = document.querySelector('#jogo');
+        jogo.innerHTML = `
             <h2>Você acertou!</h2>
             <h3>O número secreto era ${numeroSecreto}</h3>
             <button id="jogar-novamente" class="btn-jogar">Jogar novamente</button>

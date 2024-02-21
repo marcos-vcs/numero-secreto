@@ -16,6 +16,8 @@ function onSpeak(event){
 
 function reiniciarPorVoz(transcrito){
   console.log(transcrito);
+  console.log(transcrito.toString().toLowerCase() != 'reiniciar');
+  console.log(transcrito.toString().toLowerCase() != 'novo jogo');
   if(transcrito.toString().toLowerCase() != 'reiniciar' || 
      transcrito.toString().toLowerCase() != 'novo jogo'){
     return;
