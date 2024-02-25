@@ -4,6 +4,7 @@
     --font-family: 'Open Sans', sans-serif;
     --primary-color:#FEFBF6;
     --bg-color:#ECB159;
+    --bg-red: #FF004D;
 }
 
 body{
@@ -20,6 +21,10 @@ body{
     font-weight: lighter;
 }
 
+.game-over{
+    background-color: var(--bg-red);
+}
+
 h1{
     font-size: 5em;
 }
@@ -29,6 +34,11 @@ h2{
 h3{
     font-size: 2em;
     margin-top: 20px;
+}
+
+.placar{
+    font-size: 0.8em;
+    margin-top: 15px;
 }
 
 .mensagem{
