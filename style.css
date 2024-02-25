@@ -21,10 +21,6 @@ body{
     font-weight: lighter;
 }
 
-.game-over{
-    background-color: var(--bg-red);
-}
-
 h1{
     font-size: 5em;
 }
@@ -71,3 +67,11 @@ h3{
     border: 0;
     user-select: none;
  }
+
+ .game-over{
+    background-color: var(--bg-red);
+}
+
+.placar-final{
+    color: var(--bg-red);
+}

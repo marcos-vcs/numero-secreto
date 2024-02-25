@@ -5,7 +5,7 @@ window.SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecogn
 const recognition = new SpeechRecognition();
 recognition.lang = 'pt-br';
 recognition.start();
-recognition.addEventListener('result', onSpeak)
+recognition.addEventListener('result', onSpeak);
 
 const palavrasDeReset = [
   'reiniciar',

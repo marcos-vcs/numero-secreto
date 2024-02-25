@@ -1,4 +1,4 @@
-let qtdChance = 10;
+let qtdChance = 15;
 
 function verificaSeOChutePossuiValorValido(chute){
     const numero = +chute;
@@ -28,13 +28,23 @@ function verificaSeOChutePossuiValorValido(chute){
         qtdChance--;
         elementoChute.innerHTML += `
         <div>O número secreto é menor <i class="fa-solid fa-arrow-down"></i></div>
-        <div class="placar">Você ainda tem ${qtdChance} chances.</div>
+        <div class="placar ${qtdChance <= 5 ? 'placar-final' : ''}">
+            ${qtdChance <= 5 ? 'Você tem somente' : 'Você ainda tem'}
+            ${qtdChance} 
+            ${qtdChance === 1 ? 'chance': 'chances'}.
+            ${calculaEmojiPlacar()}
+        </div>
         `
     }else{
         qtdChance--;
         elementoChute.innerHTML += `
         <div>O número secreto é maior <i class="fa-solid fa-arrow-up"></i></div>
-        <div class="placar">Você ainda tem ${qtdChance} chances.</div>
+        <div class="placar ${qtdChance <= 5 ? 'placar-final' : ''}">
+            ${qtdChance <= 5 ? 'Você tem somente' : 'Você ainda tem'}
+            ${qtdChance} 
+            ${qtdChance === 1 ? 'chance': 'chances'}.
+            ${calculaEmojiPlacar()}
+        </div>
         `
     }
 
@@ -48,6 +58,23 @@ function verificaSeOChutePossuiValorValido(chute){
         return;
     }
 
+}
+
+function calculaEmojiPlacar(){
+    const emojiFeliz = '<i class="fa-regular fa-face-laugh"></i>';
+    const emojiNeutro = '<i class="fa-regular fa-face-meh"></i>';
+    const emojiTriste = '<i class="fa-regular fa-face-grimace"></i>';
+    const emojiDizzy = '<i class="fa-regular fa-face-dizzy"></i>';
+
+    if (qtdChance >= 10) {
+        return emojiFeliz;
+    } else if (qtdChance > 6) {
+        return emojiNeutro;
+    } else if (qtdChance > 3) {
+        return emojiTriste;
+    } else {
+        return emojiDizzy;
+    }
 }
 
 function chuteForInalido(numero) {
