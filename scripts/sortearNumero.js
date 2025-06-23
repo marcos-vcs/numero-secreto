@@ -7,5 +7,5 @@ elementoMaiorValor.innerHTML = maiorValor;
 elementoMenorValor.innerHTML = menorValor;
 
 function gerarNumeroAleatorio(){
-    return parseInt(Math.random() * maiorValor + 1);
+    return parseInt(Math.floor(Math.random() * (maiorValor - menorValor + 1) ) + menorValor);
 }
